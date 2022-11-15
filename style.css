@@ -5,7 +5,8 @@
 
 .card {
     min-width: 30%;
-    height: 40vh;
+    width: auto;
+    height: auto;
 }
 img {
 

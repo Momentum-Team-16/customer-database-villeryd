@@ -29,7 +29,15 @@ for (let customer of customers) {
     let address = document.createElement("div");
     address.classList.add("address");
     address.innerText = `${customer.location.street.number} ${customer.location.street.name}  
-    ${customer.location.city}, ${nameToAbbr(customer.location.state)}`;
+    ${customer.location.city}, ${nameToAbbr(customer.location.state)} ${customer.location.postcode} `;
+
+    let dob = document.createElement("div");
+    dob.classList.add("dob");
+    dob.innerText = `DOB: ${moment(customer.dob.date).format('ll')}`
+
+    let registered = document.createElement("div");
+    registered.classList.add("registered");
+    registered.innerText = `Customer Since: ${moment(customer.registered.date).format('ll')}`
 
 
 
@@ -37,6 +45,8 @@ for (let customer of customers) {
     card.appendChild(name);
     card.appendChild(email);
     card.appendChild(address);
+    card.appendChild(dob);
+    card.appendChild(registered);
 
     customerContainer.appendChild(card);
     //
